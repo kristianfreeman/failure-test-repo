@@ -35,4 +35,4 @@ jobs:
           name: Build
           url: ${{ secrets.WDC_TEAM_GOOGLE_CHAT_WEBHOOK }}
           status: ${{ job.status }}
-        if: job.status == 'failure'
+        if: ${{ failure() }}
