@@ -26,13 +26,13 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Run a one-line fail
-        run: exit 1
+      - name: Run a one-line
+        run: exit 0
           
-      - name: Google Chat Notification
-        uses: signalnerve/google-chat-notification@master
-        with:
-          name: Build
-          url: ${{ secrets.WDC_TEAM_GOOGLE_CHAT_WEBHOOK }}
-          status: ${{ job.status }}
-        if: ${{ failure() }}
+#       - name: Google Chat Notification
+#         uses: signalnerve/google-chat-notification@master
+#         with:
+#           name: Build
+#           url: ${{ secrets.WDC_TEAM_GOOGLE_CHAT_WEBHOOK }}
+#           status: ${{ job.status }}
+#         if: ${{ failure() }}
